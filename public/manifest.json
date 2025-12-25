@@ -1,0 +1,15 @@
+{
+  "short_name": "Paygent",
+  "name": "Paygent - AI Payment Orchestration",
+  "icons": [
+    {
+      "src": "/imgs/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0B1832",
+  "background_color": "#020817"
+}

@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Default Mode (Now Dark by default visually due to app structure, but let's keep variables correct for "light" if ever needed, or just force dark palette) */
+    /* MAPPING TO DARK PALETTE BY DEFAULT FOR THIS PROJECT'S "AI" VIBE */
+    --background: 222.2 84% 4.9%; /* Very dark blue #020817 */
+    --foreground: 210 40% 98%;    /* White-ish */
+    
+    --card: 223 64% 12%;          /* #0B1832 - Logo Dark Blue */
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 223 64% 12%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 217 91% 60%;       /* #3B82F6 Bright Blue for CTAs */
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+ 
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+  }
+
+  /* Explicit Dark Mode Overrides (Same as root for now since we are enforcing dark theme, but kept for structure) */
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 223 64% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 223 64% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* Custom background patterns */
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.bg-dot-white {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 100px 20px rgba(139, 92, 246, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 100px 20px rgba(59, 130, 246, 0.15);
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.glass-card {
+  @apply bg-card/50 backdrop-blur-md border border-white/5 hover:border-primary/50 transition-colors duration-300;
+}
